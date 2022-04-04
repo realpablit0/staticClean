@@ -41,10 +41,7 @@ body {
     /*========== body style ==========*/
     background-color: var(--clr-body);
     scroll-behavior: smooth;
-    min-height: 300vh;
-    scroll-behavior: smooth;
     font-family: 'Hind Siliguri', sans-serif;
-    overflow-x: hidden;
 }
 
 .text-3d {
@@ -92,7 +89,6 @@ nav[role="custom-dropdown"] {
     position: fixed;
     display: flex;
     align-items: center;
-    max-width: 100%;
     width: 100%;
     z-index: 100;
     background-color: var(--clr-container-400);
@@ -159,6 +155,7 @@ nav[role="custom-dropdown"] ul>li:hover>a {
 
 @media screen and (max-width: 44em) {
     nav[role="custom-dropdown"] {
+        width: 100%;
         display: block;
         max-height: 4rem;
     }
@@ -171,7 +168,7 @@ nav[role="custom-dropdown"] ul>li:hover>a {
         height: 100%;
         margin: 0 auto;
         top: -2.5rem;
-        /* max-width: 100%; */
+        max-width: 100%;
     }
     nav[role="custom-dropdown"] label {
         position: relative;
@@ -196,11 +193,6 @@ nav[role="custom-dropdown"] ul>li:hover>a {
     nav[role="custom-dropdown"] input[type=checkbox]:checked~ul {
         display: block;
         width: 100%;
-    }
-    nav[role="custom-dropdown"] input[type=checkbox]:checked~nav {
-        height: 10rem;
-        background-color: red;
-        color: red;
     }
     nav[role="custom-dropdown"] input[type=checkbox]:checked~ul>li {
         width: 100%;
@@ -592,11 +584,10 @@ section#home.section-mobile-nav {
 
 .blog-card {
     display: flex;
-    flex-direction: column;
     margin: 1rem auto;
     box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.6%;
-    background: #fff;
+    /* background: #fff; */
     line-height: 1.4;
     font-family: sans-serif;
     border-radius: 5px;

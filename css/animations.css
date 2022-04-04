@@ -1,0 +1,15 @@
+.pop-up-animation {
+    animation: var(--animation-slide-in-up) forwards;
+}
+
+.slide-in-left-animation {
+    animation: var(--animation-slide-in-left) forwards;
+}
+
+.slide-in-right-animation {
+    animation: var(--animation-slide-in-right) forwards;
+}
+
+.vp-hidden {
+    visibility: hidden;
+}

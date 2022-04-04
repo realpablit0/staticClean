@@ -1,6 +1,20 @@
 function init() {
-    console.log(screen.width);
+    console.log('init');
 }
+
+function overflowDebug() {
+    var docWidth = document.documentElement.offsetWidth;
+
+    [].forEach.call(
+        document.querySelectorAll('*'),
+        function(el) {
+            if (el.offsetWidth > docWidth) {
+                console.log(el);
+            }
+        }
+    );
+}
+
 /*========== scroll events ==========*/
 window.addEventListener('scroll', () => {
     if (screen.width <= 640) return
@@ -23,26 +37,6 @@ function toggleNavbarColumn() {
     var navbarLinks = document.getElementById('nav-links')
     navbarLinks.classList.toggle('navbar-display-column')
 }
-
-var scrollRev = ScrollReveal({ reset: true })
-scrollRev.reveal('.reveal-standard', {
-    scale: 0.5,
-    viewOffset: { 'bottom': 100, 'top': 100 }
-})
-
-scrollRev.reveal('.slide-in-right', {
-    distance: '150%',
-    origin: 'right',
-    delay: 500
-})
-
-scrollRev.reveal('.slide-in-left', {
-    distance: '150%',
-    origin: 'left',
-    delay: 500
-})
-
-
 
 
 
