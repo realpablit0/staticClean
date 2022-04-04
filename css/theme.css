@@ -1,0 +1,18 @@
+.light-theme {
+    /* contrast colors */
+    --clr-primary-400: #CAEBF2;
+    --clr-primary-900: #98d9e7;
+    --clr-primary-a: #98d9e79c;
+    --clr-secondary-400: #ff6466;
+    --clr-secondary-900: #FF3B3F;
+    /* text colors */
+    --clr-text-400: #A9A9A9;
+    --clr-text-900: #000000;
+    /* white */
+    --clr-white-400: rgba(255, 255, 255, .7);
+    --clr-white-900: #fff;
+    /* container colors */
+    --clr-body: #EFEFEF;
+    --clr-container-400: #f2f2f2;
+    --clr-container-900: #e0e0e0;
+}
