@@ -1,6 +1,6 @@
 function init() {
     // if (window.screenX >= 600)
-    AOS.init()
+    AOS.init({ disable: 'tablet' })
 }
 
 function _scrollTo(id) {
