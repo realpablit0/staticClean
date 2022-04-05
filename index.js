@@ -1,4 +1,5 @@
 function init() {
+    // if (window.screenX >= 600)
     AOS.init()
 }
 
