@@ -1,12 +1,12 @@
 .pop-up-animation {
-    animation: var(--animation-slide-in-up) forwards;
+    animation: var(--animation-scale-up) forwards;
 }
 
-.slide-in-left-animation {
+.slide-left-animation {
     animation: var(--animation-slide-in-left) forwards;
 }
 
-.slide-in-right-animation {
+.slide-right-animation {
     animation: var(--animation-slide-in-right) forwards;
 }
 

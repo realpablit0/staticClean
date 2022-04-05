@@ -1,5 +1,9 @@
 function init() {
-    console.log('init');
+    AOS.init()
+}
+
+function _scrollTo(id) {
+    window.scrollTo({ top: document.getElementById(id).getBoundingClientRect().top - 200, behavior: 'smooth' })
 }
 
 function overflowDebug() {
@@ -16,11 +20,11 @@ function overflowDebug() {
 }
 
 /*========== scroll events ==========*/
-window.addEventListener('scroll', () => {
-    if (screen.width <= 640) return
-    if (scrollY >= 200) return toggleNav('small')
-    else if (scrollY <= 200) return toggleNav('big')
-})
+// window.addEventListener('scroll', () => {
+//     if (screen.width <= 640) return
+//     if (scrollY >= 200) return toggleNav('small')
+//     else if (scrollY <= 200) return toggleNav('big')
+// })
 
 /*========== toggle navbar size ==========*/
 function toggleNav(state) {

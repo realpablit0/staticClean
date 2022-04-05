@@ -8,6 +8,7 @@
     <!--========== Box Icons ==========-->
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
 
@@ -20,12 +21,13 @@
     <!--========== jquery ==========-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <!--========== Scroll Reveal ==========-->
+    <!--========== AOS (scroll animation) ==========-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Static Clean</title>
 </head>
 
 <body class="light-theme" onload="init()">
-    <nav role="custom-dropdown" id="navbar">
+    <!-- <nav role="custom-dropdown" id="navbar">
         <input type="checkbox" id="button">
         <label for="button" onclick></label>
 
@@ -49,9 +51,10 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 
     <section class="stage" id="home">
+        <h1 class="hero-header-h1">lorem ipsum header</h1>
         <!--========== Image Slideer ==========-->
         <div class="slider-container">
             <div class="slider-control left inactive"></div>
@@ -66,7 +69,7 @@
                 </svg>
                         <div class="slide__text">
                             <h2 class="slide__text-heading text-3d">Link name 1</h2>
-                            <a class="slide__text-link">mehr dazu</a>
+                            <a class="slide__text-link" onclick="_scrollTo('card1')">mehr dazu</a>
                         </div>
                     </div>
                 </div>
@@ -77,8 +80,8 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                     </svg>
                         <div class="slide__text">
-                            <h2 class="slide__text-heading text-3d">Link name 1</h2>
-                            <a class="slide__text-link">mehr dazu</a>
+                            <h2 class="slide__text-heading text-3d">Link name 2</h2>
+                            <a class="slide__text-link" onclick="_scrollTo('card2')">mehr dazu</a>
                         </div>
                     </div>
                 </div>
@@ -89,8 +92,8 @@
                 <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                         <div class="slide__text">
-                            <h2 class="slide__text-heading text-3d">Link name 1</h2>
-                            <a class="slide__text-link">mehr dazu</a>
+                            <h2 class="slide__text-heading text-3d">Link name 3</h2>
+                            <a class="slide__text-link" onclick="_scrollTo('card3')">mehr dazu</a>
                         </div>
                     </div>
                 </div>
@@ -101,8 +104,8 @@
                 <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                         <div class="slide__text">
-                            <h2 class="slide__text-heading text-3d">Link name 1</h2>
-                            <a class="slide__text-link">mehr dazu</a>
+                            <h2 class="slide__text-heading text-3d">Link name 4</h2>
+                            <a class="slide__text-link" onclick="_scrollTo('card4')">mehr dazu</a>
                         </div>
                     </div>
                 </div>
@@ -111,18 +114,18 @@
     </section>
 
     <main>
-        <section class="stage inset-shadow reveal-standard" id="link2">
-            <div class="section-header">
-                <h2 class="text-3d">Link2</h2>
+        <section class="stage inset-shadow" id="link2 ">
+            <div class="section-header ">
+                <h2 class="text-3d ">main heading lorem</h2>
             </div>
-            <div class="section-content">
-                <div class="blog-card slide-in-right">
-                    <div class="meta">
-                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-                        <div class="details"></div>
+            <div class="section-content blog-cards-layout">
+                <div class="blog-card" id="card1" data-aos="flip-up">
+                    <div class="meta ">
+                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg) "></div>
+                        <div class="details "></div>
                     </div>
                     <div class="description">
-                        <h1>Mastering the Language</h1>
+                        <h1>Link name 1</h1>
                         <h2>Java is not the same as JavaScript</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                         <br>
@@ -130,13 +133,12 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                     </div>
                 </div>
-                <div class="blog-card alt slide-in-left">
-                    <div class="meta">
-                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
-                        <div class="details"></div>
+                <div class="blog-card bc-2 alt" id="card2" data-aos="flip-up">
+                    <div class="meta ">
+                        <div class="photo " style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg) "></div>
                     </div>
-                    <div class="description">
-                        <h1>Mastering the Language</h1>
+                    <div class="description ">
+                        <h1>Link name 2</h1>
                         <h2>Java is not the same as JavaScript</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                         <br>
@@ -144,21 +146,13 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="stage inset-shadow reveal-standard" id="link3">
-            <div class="section-header">
-                <h2 class="text-3d">LinK3</h2>
-            </div>
-            <div class="section-content first-blog-scetion">
-                <div class="blog-card slide-in-right">
+                <div class="blog-card " id="card3" data-aos="flip-right">
                     <div class="meta">
-                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-                        <div class="details"></div>
+                        <div class="photo " style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg) "></div>
+                        <div class="details "></div>
                     </div>
-                    <div class="description">
-                        <h1>Mastering the Language</h1>
+                    <div class="description ">
+                        <h1>Link name 3</h1>
                         <h2>Java is not the same as JavaScript</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                         <br>
@@ -166,13 +160,13 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                     </div>
                 </div>
-                <div class="blog-card alt slide-in-left">
-                    <div class="meta">
-                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
-                        <div class="details"></div>
+                <div class="blog-card alt slide-in-left " id="card4" data-aos="flip-left">
+                    <div class="meta ">
+                        <div class="photo " style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg) "></div>
+                        <div class="details "></div>
                     </div>
-                    <div class="description">
-                        <h1>Mastering the Language</h1>
+                    <div class="description ">
+                        <h1>Link name 4</h1>
                         <h2>Java is not the same as JavaScript</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
                         <br>
@@ -185,12 +179,13 @@
 
     </main>
 
-    <footer class="slide-in-right">
+    <footer class="slide-in-right ">
         footer
     </footer>
 
-    <script src="viewpointWrapper.js"></script>
-    <script src="index.js"></script>
+    <!-- <script src="animon-main/dist/animon.iife.js "></script> -->
+    <script src="viewpointWrapper.js "></script>
+    <script src="index.js "></script>
 </body>
 
 </html>
