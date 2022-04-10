@@ -1,10 +1,10 @@
 .light-theme {
     /* contrast colors */
-    --clr-primary-400: #CAEBF2;
-    --clr-primary-900: #98d9e7;
-    --clr-primary-a: #98d9e79c;
-    --clr-secondary-400: #ff6466;
-    --clr-secondary-900: #FF3B3F;
+    --clr-primary-400: #1e90ff;
+    --clr-primary-900: #4da2f7;
+    --clr-primary-a: rgba(30, 144, 255, .5);
+    --clr-secondary-400: rgb(158, 213, 248);
+    --clr-secondary-900: lightskyblue;
     /* text colors */
     --clr-text-400: #A9A9A9;
     --clr-text-900: #000000;

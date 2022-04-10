@@ -52,7 +52,6 @@
             </li>
         </ul>
     </nav> -->
-
     <h1 class="hero-header-h1">lorem ipsum header</h1>
     <section class="stage" id="home">
         <!--========== Image Slideer ==========-->
@@ -65,8 +64,8 @@
                     <div class="slide__bg"></div>
                     <div class="slide__content">
                         <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                </svg>
+                            <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                        </svg>
                         <div class="slide__text">
                             <h2 class="slide__text-heading text-3d">Link name 1</h2>
                             <a class="slide__text-link" onclick="_scrollTo('card1')">mehr dazu</a>
@@ -114,11 +113,13 @@
     </section>
 
     <main>
-        <section class="stage inset-shadow" id="link2 ">
+        <div class="background">
+        </div>
+        <section class="stage" id="link2 ">
             <div class="section-header ">
                 <h2 class="text-3d ">main heading lorem</h2>
             </div>
-            <div class="section-content blog-cards-layout">
+            <div class="section-content">
                 <div class="blog-card" id="card1" data-aos="flip-up">
                     <div class="meta ">
                         <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg) "></div>
@@ -176,10 +177,61 @@
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer class="slide-in-right ">
+    <section class="contact stage" id="contact-section">
+        <div class="background-container">
+            <div class="background-top" data-aos="slide-left"></div>
+            <div class="background-bottom" data-aos="slide-right"></div>
+        </div>
+        <div class="section-header ">
+            <h2 class="text-3d ">main heading lorem</h2>
+        </div>
+        <div class="contact-form-container " data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
+            <div class="row header">
+                <h1>CONTACT US &nbsp;</h1>
+                <h3>Fill out the form below to learn more!</h3>
+            </div>
+            <div class="row body">
+                <form action="#">
+                    <ul>
+                        <li>
+                            <p class="left">
+                                <label for="first_name">first name</label>
+                                <input type="text" name="first_name" placeholder="John" />
+                            </p>
+                            <p class="pull-right">
+                                <label for="last_name">last name</label>
+                                <input type="text" name="last_name" placeholder="Smith" />
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                <label for="email">email <span class="req">*</span></label>
+                                <input type="email" name="email" placeholder="john.smith@gmail.com" />
+                            </p>
+                        </li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li>
+                            <label for="comments">comments</label>
+                            <textarea cols="46" rows="3" name="comments"></textarea>
+                        </li>
+
+                        <li>
+                            <input class="btn btn-submit" type="submit" value="Submit" />
+                            <small>or press <strong>enter</strong></small>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         footer
     </footer>
 

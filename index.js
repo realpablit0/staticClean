@@ -1,6 +1,28 @@
 function init() {
     // if (window.screenX >= 600)
     AOS.init({ disable: 'mobile' })
+    window.addEventListener('scroll', () => {
+        // backgroundCalc()
+        // scrollLockCheck('contact-section')
+
+    })
+}
+
+function scrollLockCheck(id) {
+    var target = document.getElementById(id).getBoundingClientRect()
+    if (scrollY >= target.top + 200) {
+        scrollTo({ 'top': target.top, behavior: 's mooth' })
+        disableBodyScroll({ savePosition: true })
+    }
+}
+
+function backgroundCalc() {
+    var moveBall1 = document.getElementById('')
+    var moveBall2
+}
+
+var config = {
+    'mobileScreenSize': 600
 }
 
 function _scrollTo(id) {
@@ -118,22 +140,22 @@ $(document).ready(function() {
         if (curSlide < numOfSlides) curSlide++;
         changeSlides();
     }
+    if (window.screenX >= config.mobileScreenSize)
+        $(document).on("mousedown touchstart", ".slider", function(e) {
+            if (animating) return;
+            window.clearTimeout(autoSlideTimeout);
+            var startX = e.pageX || e.originalEvent.touches[0].pageX,
+                winW = $(window).width();
+            diff = 0;
 
-    $(document).on("mousedown touchstart", ".slider", function(e) {
-        if (animating) return;
-        window.clearTimeout(autoSlideTimeout);
-        var startX = e.pageX || e.originalEvent.touches[0].pageX,
-            winW = $(window).width();
-        diff = 0;
-
-        $(document).on("mousemove touchmove", function(e) {
-            var x = e.pageX || e.originalEvent.touches[0].pageX;
-            diff = (startX - x) / winW * 70;
-            if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
-            $slider.css("transform", "translate3d(" + (-curSlide * 100 - diff) + "%,0,0)");
-            $slideBGs.css("transform", "translate3d(" + (curSlide * 50 + diff / 2) + "%,0,0)");
+            $(document).on("mousemove touchmove", function(e) {
+                var x = e.pageX || e.originalEvent.touches[0].pageX;
+                diff = (startX - x) / winW * 70;
+                if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
+                $slider.css("transform", "translate3d(" + (-curSlide * 100 - diff) + "%,0,0)");
+                $slideBGs.css("transform", "translate3d(" + (curSlide * 50 + diff / 2) + "%,0,0)");
+            });
         });
-    });
 
     $(document).on("mouseup touchend", function(e) {
         $(document).off("mousemove touchmove");
@@ -168,3 +190,30 @@ $(document).ready(function() {
     });
 
 });
+
+function enableBodyScroll() {
+    if (document.readyState === 'complete') {
+        document.body.style.position = '';
+        document.body.style.overflowY = '';
+
+        if (document.body.style.marginTop) {
+            const scrollTop = -parseInt(document.body.style.marginTop, 10);
+            document.body.style.marginTop = '';
+            window.scrollTo(window.pageXOffset, scrollTop);
+        }
+    } else {
+        window.addEventListener('load', enableBodyScroll);
+    }
+}
+
+function disableBodyScroll({ savePosition = false } = {}) {
+    if (document.readyState === 'complete') {
+        if (document.body.scrollHeight > window.innerHeight) {
+            if (savePosition) document.body.style.marginTop = `-${window.pageYOffset}px`;
+            document.body.style.position = 'fixed';
+            document.body.style.overflowY = 'scroll';
+        }
+    } else {
+        window.addEventListener('load', () => disableBodyScroll({ savePosition }));
+    }
+}
